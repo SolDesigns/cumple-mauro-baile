@@ -1,0 +1,78 @@
+/* =============================
+   RESET + CONFIGURACIÓN GLOBAL
+============================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+}
+
+
+/* =============================
+   CONFIGURACIÓN VIDEO/CONTROLES
+============================= */
+
+.custom-video {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-video__container {
+  position: relative;
+  width: 100vw;
+}
+
+.custom-video__video {
+  width: 100%;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.custom-video__control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Ocultamos controles nativos */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Para pantallas grandes */
+@media (min-width: 768px) {
+  .custom-video__container {
+    width: 50vw;
+  }
+
+  .custom-video__control {
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+/* =============================
+   CONFIGURACIÓN VIDEO/CONTROLES
+============================= */
