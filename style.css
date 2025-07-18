@@ -74,5 +74,30 @@ video::-webkit-media-controls {
 }
 
 /* =============================
-   CONFIGURACIÓN VIDEO/CONTROLES
+            BOTONES
 ============================= */
+.btn-overlay {
+  position: absolute;
+  display: block;
+  z-index: 3;
+  border-radius: 0.5em;
+  cursor: pointer;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0) /* invisibilidad sin perder clickeabilidad */
+}
+
+/* Botón 1: VER UBICACIÓN */
+.btn-ubicacion {
+  top: 5%;
+  left: 5%;
+  width: 30%;
+  height: 10%;
+}
+
+/* Botón 2: CONFIRMAR ASISTENCIA */
+.btn-confirmar {
+  top: 58%;
+  left: 5%;
+  width: 30%;
+  height: 10%;
+}
