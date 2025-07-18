@@ -60,19 +60,6 @@ video::-webkit-media-controls {
   display: none !important;
 }
 
-/* Para pantallas grandes */
-@media (min-width: 768px) {
-  .custom-video__container {
-    width: 50vw;
-  }
-
-  .custom-video__control {
-    font-size: 2.5rem;
-    width: 4rem;
-    height: 4rem;
-  }
-}
-
 /* =============================
             BOTONES
 ============================= */
@@ -100,4 +87,27 @@ video::-webkit-media-controls {
   left: 5%;
   width: 30%;
   height: 10%;
+}
+
+/* =============================
+       RESPONSIVE DESKTOP
+============================= */
+@media (min-width: 768px) {
+  .custom-video__container {
+    width: 50vw;          /* ancho al 50% del viewport */
+    max-width: 600px;     /* máximo ancho fijo (ajustalo a gusto) */
+    max-height: 80vh;     /* máximo alto al 80% de la ventana */
+    margin: 0 auto;       /* centrar horizontalmente */
+  }
+
+  .custom-video__video {
+    width: 100%;
+    height: auto;         /* mantener proporción */
+  }
+
+  .custom-video__control {
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+  }
 }
