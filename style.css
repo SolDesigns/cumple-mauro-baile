@@ -66,9 +66,10 @@ html, body {
   cursor: pointer;
 }
 
-/* Ocultamos controles nativos */
-video::-webkit-media-controls {
-  display: none !important;
+
+.custom-video__video {
+  outline: none;
+  touch-action: manipulation; /* ayuda a evitar doble tap o zoom */
 }
 
 /* =============================

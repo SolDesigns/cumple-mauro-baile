@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnUbicacion = document.getElementById("btnUbicacion");
   const btnConfirmar = document.getElementById("btnConfirmar");
 
+  // Reproducir/Pausar con botón personalizado
   control.addEventListener("click", () => {
     if (video.paused) {
       video.play();
@@ -18,11 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Mostrar control al terminar el video
   video.addEventListener("ended", () => {
     control.textContent = "▶";
     control.style.display = "flex";
   });
 
+  // Pausar tocando el video (pantalla)
   video.addEventListener("click", () => {
     if (!video.paused) {
       video.pause();
@@ -31,20 +34,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // MOSTRAR BOTONES A LOS 2 SEGUNDOS (para testear)
+  // Mostrar botones a los 23 segundos
   video.addEventListener("timeupdate", () => {
-    if (video.currentTime >= 23){
+    if (video.currentTime >= 23) {
       btnUbicacion.classList.add("show");
       btnConfirmar.classList.add("show");
     }
   });
 
-  // OCULTAR SI EL VIDEO VUELVE AL INICIO
+  // Ocultar botones si vuelve al inicio
   video.addEventListener("seeked", () => {
-    if (video.currentTime < 23){
+    if (video.currentTime < 23) {
       btnUbicacion.classList.remove("show");
       btnConfirmar.classList.remove("show");
     }
   });
-});
 
+  // Mostrar controles nativos brevemente en mobile o mouse
+  let controlsTimeout;
+
+  function mostrarControles() {
+    video.setAttribute("controls", true);
+    clearTimeout(controlsTimeout);
+    controlsTimeout = setTimeout(() => {
+      video.removeAttribute("controls");
+    }, 3000); // Oculta controles luego de 3 seg
+  }
+
+  video.addEventListener("touchstart", mostrarControles);
+  video.addEventListener("mousemove", mostrarControles);
+});
