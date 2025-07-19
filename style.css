@@ -51,7 +51,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 4;
   cursor: pointer;
 }
 
@@ -63,31 +63,48 @@ video::-webkit-media-controls {
 /* =============================
             BOTONES
 ============================= */
-.btn-overlay {
+
+
+.btn-visible {
   position: absolute;
-  display: block;
   z-index: 3;
-  border-radius: 0.5em;
-  cursor: pointer;
-  pointer-events: auto;
-  background-color: rgba(0, 0, 0, 0) /* invisibilidad sin perder clickeabilidad */
+  padding: 0.8em 1.2em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2b281f;
+  background-color: #ccaa57;
+  border-radius: 1em;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none; /* desactiva clic hasta que aparezcan */
+  transition: opacity 0.5s ease;
 }
 
-/* Botón 1: VER UBICACIÓN */
+/* Posiciones */
 .btn-ubicacion {
-  top: 5%;
-  left: 5%;
-  width: 30%;
-  height: 10%;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
 }
 
-/* Botón 2: CONFIRMAR ASISTENCIA */
 .btn-confirmar {
-  top: 58%;
-  left: 5%;
-  width: 30%;
-  height: 10%;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
 }
+
+/* Cuando se activa desde JS */
+.btn-visible.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 
 /* =============================
        RESPONSIVE DESKTOP
