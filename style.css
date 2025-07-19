@@ -46,6 +46,8 @@ html, body {
   height: 100%;
   max-height: 100vh;
   object-fit: contain;
+  padding-bottom: 20px;
+  object-position: center top;
 }
 
 .custom-video__control {
@@ -96,7 +98,7 @@ html, body {
 /* Posiciones */
 .btn-ubicacion {
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 50%;
   transform: translateX(-50%);
   width: 250px;
@@ -104,7 +106,7 @@ html, body {
 
 .btn-confirmar {
   position: absolute;
-  top: 44%;
+  top: 34%;
   left: 50%;
   transform: translateX(-50%);
   width: 250px;
@@ -139,4 +141,25 @@ html, body {
     width: 4rem;
     height: 4rem;
   }
+  .btn-ubicacion {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+}
+
+.btn-confirmar {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+}
+
+/* Cuando se activa desde JS */
+.btn-visible.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 }
