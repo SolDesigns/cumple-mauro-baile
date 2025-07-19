@@ -13,6 +13,11 @@ body {
   background: black;
 }
 
+/*evitar scrollear*/
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
 
 /* =============================
    CONFIGURACIÓN VIDEO/CONTROLES
@@ -27,19 +32,23 @@ body {
 }
 
 .custom-video__container {
-  position: relative;
-  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .custom-video__video {
-  width: 100%;
-  border-radius: 0.5em;
-  cursor: pointer;
+ width: 100vw;
+  height: auto;
+  max-height: 100vh;
+  object-fit: contain;
 }
 
 .custom-video__control {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.5);
@@ -111,15 +120,15 @@ video::-webkit-media-controls {
 ============================= */
 @media (min-width: 768px) {
   .custom-video__container {
-    width: 50vw;          /* ancho al 50% del viewport */
-    max-width: 600px;     /* máximo ancho fijo (ajustalo a gusto) */
-    max-height: 80vh;     /* máximo alto al 80% de la ventana */
-    margin: 0 auto;       /* centrar horizontalmente */
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
   }
 
   .custom-video__video {
-    width: 100%;
-    height: auto;         /* mantener proporción */
+    height: 100vh;
+    width: auto;
   }
 
   .custom-video__control {
